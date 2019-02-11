@@ -14,18 +14,35 @@ export default class App extends Component {
       sortBy: ""
     }
 
+    this.handleClickAge = this.handleClickAge.bind(this);
+    this.handleClickName = this.handleClickName.bind(this);
+    this.handleClickPoints = this.handleClickPoints.bind(this);
+    this.handleClickRank = this.handleClickRank.bind(this);
+
   }
 
   handleClickAge() {
+    this.setState({
+      sortBy: "age"
+    });
   }
 
   handleClickName() {
+    this.setState({
+      sortBy: "name"
+    });
   }
 
   handleClickPoints() {
+    this.setState({
+      sortBy: "points"
+    });
   }
 
   handleClickRank() {
+    this.setState({
+      sortBy: "rank"
+    });
   }
 
   render() {
@@ -35,11 +52,11 @@ export default class App extends Component {
           <h1>Leaderboard</h1>
         </header>
         <div className="text-center buttons">
-          <Age></Age>
-          <Name></Name>
-          <Points></Points>
-          <Rank></Rank>
-          <Table></Table>
+          <Age handleClickAge={this.handleClickAge}></Age>
+          <Name handleClickName={this.handleClickName}></Name>
+          <Points handleClickPoints={this.handleClickPoints}></Points>
+          <Rank handleClickRank={this.handleClickRank}></Rank>
+          <Table sortBy={this.state.sortBy}></Table>
         </div>
       </div>
     );

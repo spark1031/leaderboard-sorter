@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Age = ({}) => (
-  <button className="btn btn-primary age" name="age">Age</button>
+const Age = ({ handleClickAge }) => (
+  <button onClick={handleClickAge} className="btn btn-primary age" name="age">Age</button>
 );
 
 export default Age;
